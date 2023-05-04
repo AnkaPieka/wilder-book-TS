@@ -1,0 +1,9 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #f76c6c;
+  color: #fff;
+  padding: 0.5em 2em;
+  display: flex;
+  align-items: center;
+}

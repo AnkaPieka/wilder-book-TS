@@ -1,0 +1,79 @@
+:root {
+  --grey-wild: #222;
+  --pink-wild: #f76c6c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.35em;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 28px;
+  color: var(--grey-wild);
+}
+
+h3 {
+  font-size: 20px;
+  color: var(--grey-wild);
+}
+
+h4 {
+  font-size: 15px;
+  color: var(--grey-wild);
+}
+
+p {
+  color: var(--grey-wild);
+}
+
+button,
+.addWilderButton {
+  cursor: pointer;
+  padding: 0.4em 0.6em;
+  background-color: var(--pink-wild);
+  border-radius: 4px;
+  border: none;
+  color: white;
+  box-shadow: 1px 1px 3px var(--grey-wild);
+  margin: 6px 0;
+}
+
+label > p {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  border-bottom: solid var(--pink-wild) 2px;
+  border-radius: 4px 4px 0 0;
+  color: var(--grey-wild);
+  padding: 0.4em 0.6em;
+  margin: 6px 0 6px;
+}
+
+input:focus-visible {
+  outline: solid rgba(247, 108, 108, 0.5) 2px;
+}
+
+input:not(textarea) {
+  line-height: 1;
+  height: 2.25rem;
+}
+
+::placeholder {
+  color: rgba(247, 108, 108, 0.273);
+}

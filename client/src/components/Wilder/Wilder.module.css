@@ -1,0 +1,21 @@
+.wilderCard {
+  padding: 20px;
+  border: 1px solid #c9c9c9;
+  border-radius: 7px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.wilderCard > img {
+  border-radius: 7px 7px 0 0;
+  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+.wilderCard > section > .description {
+  margin-bottom: 0.35em;
+}
+
+.wilderCard > section > .name {
+  color: #f76c6c;
+}
