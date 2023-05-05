@@ -1,14 +1,22 @@
-import React, { useState } from "react";
 import axios from "axios";
+import React, { useState } from "react";
+// import { useForm } from "react-hook-form";
 import styles from "./WilderForm.module.css";
+import { WilderType } from "../../types/interfaces";
 
 type fetchDataType = {
   fetchData: () => Promise<void>;
 };
 
 function WilderForm({ fetchData }: fetchDataType) {
-  const [name, setName] = useState<string>("");
-  const [city, setCity] = useState<string>("");
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   watch,
+  //   formState: { errors },
+  // } = useForm<{ name: string; city: string }>();
+  const [name, setName] = useState<WilderType["name"]>("");
+  const [city, setCity] = useState<WilderType["city"]>("");
 
   const handleNameChange = (name: string) => {
     setName(name);
@@ -37,10 +45,12 @@ function WilderForm({ fetchData }: fetchDataType) {
           <label className="wilder-name">
             <p>Name</p>
             <input
+              id="wilder-name"
+              name="wilder-name"
               type="text"
               value={name ? name : ""}
               onChange={(e) => handleNameChange(e.currentTarget.value)}
-              placeholder="John Doe"
+              placeholder="Jane Doe"
             />
           </label>
         </section>
