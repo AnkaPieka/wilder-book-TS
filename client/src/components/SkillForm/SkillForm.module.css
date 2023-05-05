@@ -1,0 +1,10 @@
+.addSkill {
+  width: 100%;
+  max-width: 50%;
+  margin-bottom: 2em;
+}
+
+#modifySkillsList {
+  display: flex;
+  justify-content: space-between;
+}

@@ -9,7 +9,7 @@ export const createWilder = async (req: Request, res: Response): Promise<void> =
 
     res.status(200).send("Created Wilder");
   } catch (error) {
-    res.status(500).send({ message: `Error while creating wilder` });
+    res.status(400).send({ message: `Error while creating wilder` });
   }
 };
 
@@ -38,7 +38,7 @@ export const readWilder = async (req: Request, res: Response): Promise<void> => 
 
     res.status(200).send(data);
   } catch (error) {
-    res.status(500).send({ message: `Error while getting wilder` });
+    res.status(400).send({ message: `Error while getting wilder` });
   }
 };
 
@@ -48,7 +48,7 @@ export const updateWilder = async (req: Request, res: Response): Promise<void> =
 
     res.status(200).send({ message: "Wilder Updated" });
   } catch (error) {
-    res.status(500).send({ message: `Error while updating wilder` });
+    res.status(400).send({ message: `Error while updating wilder` });
   }
 };
 
@@ -59,7 +59,7 @@ export const deleteWilder = async (req: Request, res: Response): Promise<void> =
 
     res.status(200).send({ message: `Deleted successfully` });
   } catch (error) {
-    res.status(500).send({ message: `Error while deleting wilder` });
+    res.status(400).send({ message: `Error while deleting wilder` });
   }
 };
 

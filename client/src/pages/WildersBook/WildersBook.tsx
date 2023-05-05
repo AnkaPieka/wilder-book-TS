@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import SkillForm from "../../components/SkillForm/SkillForm";
 import Wilder from "../../components/Wilder/Wilder";
 import WilderForm from "../../components/WilderForm/WilderForm";
-import styles from "./WildersBook.module.css";
-
-import SkillForm from "../../components/SkillForm/SkillForm";
 import { SkillFromDB, WilderType } from "../../types/interfaces";
+
+import styles from "./WildersBook.module.css";
 
 function WildersBook() {
   const [wilders, setWilders] = useState<WilderType[]>([]);
@@ -30,7 +30,7 @@ function WildersBook() {
   return (
     <div id={styles.wilderBookContainer}>
       <WilderForm fetchData={fetchData} />
-      <SkillForm skills={skillsFromDB} fetchData={fetchData} />
+      <SkillForm wilders={wilders} skills={skillsFromDB} fetchData={fetchData} />
 
       <section>
         <h2>Wilders</h2>

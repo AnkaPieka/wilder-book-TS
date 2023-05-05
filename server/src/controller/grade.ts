@@ -24,11 +24,12 @@ export const createGrade = async (req: Request, res: Response): Promise<void> =>
       };
 
       await dataSource.getRepository(Grade).save(toSave);
-
       res.status(200).send("Created Grade");
+    } else {
+      res.status(400).send({ message: `No skill or wilder were found` });
     }
   } catch (error) {
-    res.status(500).send({ message: `Error while creating grade` });
+    res.status(400).send({ message: `Error while creating grade` });
   }
 };
 
@@ -38,7 +39,7 @@ export const readGrade = async (req: Request, res: Response): Promise<void> => {
 
     res.status(200).send(gradeFromDB);
   } catch (error) {
-    res.status(500).send({ message: `Error while updating wilder` });
+    res.status(400).send({ message: `Error while updating wilder` });
   }
 };
 // delete: async (req, res) => {

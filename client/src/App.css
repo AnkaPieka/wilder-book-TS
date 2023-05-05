@@ -32,6 +32,7 @@ h3 {
 h4 {
   font-size: 15px;
   color: var(--grey-wild);
+  margin-bottom: 0.2em;
 }
 
 p {
@@ -76,4 +77,14 @@ input:not(textarea) {
 
 ::placeholder {
   color: rgba(247, 108, 108, 0.273);
+}
+
+select {
+  width: 100%;
+  line-height: 1;
+  height: 2.25rem;
+  border-radius: 4px;
+  border-color: var(--grey-wild);
+  padding: 0.4em 0.6em;
+  color: var(--pink-wild);
 }
