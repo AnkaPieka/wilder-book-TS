@@ -17,13 +17,13 @@ function Wilder({ id, name, city, skills, setWilders }: WilderProps) {
   const [modifyWilderName, setModifyWilderName] = useState<boolean>(false);
   const [modifyWilderCity, setModifyWilderCity] = useState<boolean>(false);
 
-  const handleDeleteWilder = () => {
-    axios
-      .delete(`http://localhost:5000/api/wilder`, { data: { id } })
-      .then(() => {
-        setWilders((prevWilder) => prevWilder.filter((wilder) => wilder.id !== id));
-      })
-      .catch((err) => console.log("Front error while deleting:", err));
+  const handleDeleteWilder = async (): Promise<void> => {
+    try {
+      await axios.delete(`http://localhost:5000/api/wilder`, { data: { id } });
+      setWilders((prevWilder) => prevWilder.filter((wilder) => wilder.id !== id));
+    } catch (err) {
+      console.log("Front error while deleting:", err);
+    }
   };
 
   const handleUpdateWilder = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -73,7 +73,7 @@ function Wilder({ id, name, city, skills, setWilders }: WilderProps) {
                   justifyContent: "space-between",
                 }}
               >
-                <h3 className={styles.name}>{name}</h3>
+                <h3 className={styles.name}>{newName}</h3>
                 <button onClick={() => setModifyWilderName(true)}>🖊️</button>
               </div>
             )}
@@ -104,7 +104,7 @@ function Wilder({ id, name, city, skills, setWilders }: WilderProps) {
                   justifyContent: "space-between",
                 }}
               >
-                <h5 className={styles.description}>{city}</h5>
+                <h5 className={styles.description}>{newCity}</h5>
                 <button onClick={() => setModifyWilderCity(true)}>🖊️</button>
               </div>
             )}
