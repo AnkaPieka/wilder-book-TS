@@ -4,15 +4,15 @@ import profilePic from "../../assets/pic_profile_wilder.png";
 import Skills from "../Skills/Skills";
 import styles from "./Wilder.module.css";
 
-import { SkillFromDB, WilderType } from "../../types/interfaces";
+import { WilderType } from "../../types/interfaces";
 
 interface WilderProps extends WilderType {
   setWilders: React.Dispatch<React.SetStateAction<WilderType[]>>;
 }
 
 function Wilder({ id, name, city, skills, setWilders }: WilderProps) {
-  const [newName, setNewName] = useState<string>(name);
-  const [newCity, setNewCity] = useState<string>(city);
+  const [newName, setNewName] = useState<WilderType["name"]>(name);
+  const [newCity, setNewCity] = useState<WilderType["city"]>(city);
 
   const [modifyWilderName, setModifyWilderName] = useState<boolean>(false);
   const [modifyWilderCity, setModifyWilderCity] = useState<boolean>(false);
